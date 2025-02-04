@@ -8,7 +8,7 @@
 
 
 Data columns (total 15 columns):
- #   Column          Non-Null Count  Dtype  
+    Column          Non-Null Count  Dtype  
 ---  ------          --------------  -----  
  0   Unnamed: 0      73462 non-null  int64 - Удалил  
  1   Age             73462 non-null  object - Преобразовал в интовое значение и переименовал "<35 Years" (<35 = 1 и >35= 0)  
