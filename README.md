@@ -5,11 +5,10 @@
 3) Gender - Надо обсудить - Стоит ли учитывать NonBinary вообще? Может его лучше drop и преобразовать в int (Man = 1, Woman = 0)?  
 4) Country - Надо обсудить - Сделал порог для редких стран, потому что получается много стобцов с dummy переменными, но по идее все зависит от задачи  
 5) HaveWorkedWith - Аналогично Country  
-
+---  ------          --------------  -----  
 
 Data columns (total 15 columns):
-    Column          Non-Null Count  Dtype  
----  ------          --------------  -----  
+      Column          Non-Null Count  Dtype  
  0   Unnamed: 0      73462 non-null  int64 - Удалил  
  1   Age             73462 non-null  object - Преобразовал в интовое значение и переименовал "<35 Years" (<35 = 1 и >35= 0)  
  2   Accessibility   73462 non-null  object - Преобразовал в интовое значение "Accessibility" (Yes = 1, No = 0)  
