@@ -37,9 +37,24 @@ rare_countries = country_counts[country_counts < threshold].index
 df['Country'] = df['Country'].apply(lambda x: 'Other' if x in rare_countries else x)
 df = pd.get_dummies(df, columns=['Country'], prefix='Country')
 
-technologies = set()
+
+# Обработка столбца 'HaveWorkedWith'
+from collections import defaultdict
+
+tech_counts = defaultdict(int)
 for tech_list in df['HaveWorkedWith'].dropna():
-    technologies.update(tech_list.split(';'))
+    for tech in tech_list.split(';'):
+        tech_counts[tech] += 1
+threshold_tech = 5000  # Порог для определения редких технологий - Обсудить
+def replace_rare_techs(tech_list):
+    if pd.isna(tech_list):
+        return tech_list
+    techs = tech_list.split(';')
+    techs = [tech if tech_counts[tech] >= threshold_tech else 'Other' for tech in techs]
+    return ';'.join(techs)
+df['HaveWorkedWith'] = df['HaveWorkedWith'].apply(replace_rare_techs)
+technologies = set(tech for tech, count in tech_counts.items() if count >= threshold_tech)
+technologies.add('Other')
 tech_data = {f'Tech_{tech}': df['HaveWorkedWith'].apply(lambda x: 1 if tech in str(x) else 0) for tech in technologies}
 tech_df = pd.DataFrame(tech_data)
 df = pd.concat([df, tech_df], axis=1)
