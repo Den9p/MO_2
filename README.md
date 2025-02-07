@@ -5,11 +5,11 @@
 - Country - посоветоваться с преподом 
 
 Выбросы:
-EdLevel - нечего убирать (можно просто чекнуть)
-YearsCode
-YearsCodePro
-Country
-PreviousSalary
+EdLevel - нечего убирать (можно просто чекнуть)  
+YearsCode  
+YearsCodePro  
+Country  
+PreviousSalary  
 
 ## 06.02.2025 
 Добавил .ipynb файл
