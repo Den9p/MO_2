@@ -1,4 +1,15 @@
 # MO_2
+## 07.02.2025 Сделать: 
+- Дропнуть isnull
+- Изменить название NonBinary 
+- Country - посоветоваться с преподом 
+
+Выбросы:
+EdLevel - нечего убирать (можно просто чекнуть)
+YearsCode
+YearsCodePro
+Country
+PreviousSalary
 
 ## 06.02.2025 
 Добавил .ipynb файл
